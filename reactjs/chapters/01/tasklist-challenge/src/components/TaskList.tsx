@@ -25,7 +25,7 @@ export function TaskList() {
       title: newTaskTitle,
       isComplete: false,
     };
-    setTasks([newTask, ...tasks]);
+    setTasks([...tasks, newTask]);
     setNewTaskTitle("");
   }
 
@@ -40,26 +40,12 @@ export function TaskList() {
         : task
     );
     setTasks(newTasks);
-    // setTasks((previousTask) => {
-    //   const task = previousTask.find((task) => task.id === id);
-    //   if (task == null) {
-    //     return [...previousTask];
-    //   }
-    //   task.isComplete = !task.isComplete;
-    //   return [...previousTask];
-    // });
   }
 
   function handleRemoveTask(id: number) {
     // Remova uma task da listagem pelo ID
-    const nId = tasks.findIndex((task) => task.id === id);
-    console.log("[SHOULD-REMOVE] - ", tasks[nId]);
     const filteredTasks = tasks.filter((task) => task.id !== id);
     setTasks(filteredTasks);
-    // setTasks((previousTask) => {
-    //   const tasks = previousTask.filter((task) => task.id !== id);
-    //   return [...tasks];
-    // });
   }
 
   return (
@@ -107,6 +93,7 @@ export function TaskList() {
               <button
                 type="button"
                 data-testid="remove-task-button"
+                // data-testid={`remove-task-button-${task.id}`}
                 onClick={() => handleRemoveTask(task.id)}
               >
                 <FiTrash size={16} />
