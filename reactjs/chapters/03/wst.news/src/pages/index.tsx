@@ -1,12 +1,5 @@
-import Head from "next/head";
+import { HomePageComponent } from "../components/PageComponents/Home";
 
 export default function Home() {
-  return (
-    <>
-      <Head>
-        <title>Home | wst.news</title>
-      </Head>
-      <h1>Hello World</h1>
-    </>
-  );
+  return <HomePageComponent />;
 }
