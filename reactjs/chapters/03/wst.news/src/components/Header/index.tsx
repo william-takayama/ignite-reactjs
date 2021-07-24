@@ -7,7 +7,12 @@ export function Header() {
   return (
     <header className={styles.headerContainer}>
       <div className={styles.headerContent}>
-        <img src="/images/logo.svg" alt="wst news logo" />
+        <Image
+          src="/images/logo.svg"
+          alt="wst news logo"
+          width="100%"
+          height={50}
+        />
         <nav>
           <a href="" className={styles.active}>
             Home

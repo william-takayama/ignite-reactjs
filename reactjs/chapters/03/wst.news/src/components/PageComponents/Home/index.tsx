@@ -1,9 +1,16 @@
 import Head from "next/head";
+import Image from "next/image";
+import { Product } from "../../../pages";
+
 import { SubscribeButton } from "../../SubscribeButton";
 
 import styles from "./styles.module.scss";
 
-export function HomePageComponent() {
+interface HomePageComponentProps {
+  product: Product;
+}
+
+export function HomePageComponent({ product }: HomePageComponentProps) {
   return (
     <>
       <Head>
@@ -18,13 +25,18 @@ export function HomePageComponent() {
           </h1>
           <p>
             Get access to all the publications <br />
-            <span>for $9.90 month</span>
+            <span>for {product.priceAmount} month</span>
           </p>
 
-          <SubscribeButton />
+          <SubscribeButton priceId={product.priceId} />
         </section>
 
-        <img src="/images/avatar.svg" alt="girl coding" />
+        <Image
+          src="/images/avatar.svg"
+          alt="girl coding"
+          width={450}
+          height={450}
+        />
       </main>
     </>
   );
