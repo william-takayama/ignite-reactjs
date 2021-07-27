@@ -6,15 +6,21 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "stripe-dev": "./stripe listen --forward-to localhost:3000/api/webhooks"
   },
   "dependencies": {
+    "@stripe/stripe-js": "^1.16.0",
+    "axios": "^0.21.1",
     "clsx": "^1.1.1",
+    "faunadb": "^4.3.0",
     "next": "11.0.1",
     "next-auth": "^3.27.3",
+    "node-jose-tools": "^1.6.28",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.2.0",
+    "react-toast": "^1.0.3",
     "stripe": "^8.165.0"
   },
   "devDependencies": {
