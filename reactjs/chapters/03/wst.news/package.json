@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "stripe-dev": "./stripe listen --forward-to localhost:3000/api/webhooks"
+    "stripe-dev": "./scripts/stripe listen --forward-to localhost:3000/api/webhooks"
   },
   "dependencies": {
     "@stripe/stripe-js": "^1.16.0",
