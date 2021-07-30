@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
+import { ActiveLink } from "../ActiveLink";
 import { SignInButton } from "../SignInButton";
 import styles from "./styles.module.scss";
 
@@ -15,12 +15,12 @@ export function Header() {
           height={50}
         />
         <nav>
-          <Link href="/">
-            <a className={styles.active}>Home</a>
-          </Link>
-          <Link href="/posts">
+          <ActiveLink href="/" activeClassName={styles.active}>
+            <a>Home</a>
+          </ActiveLink>
+          <ActiveLink href="/posts" prefetch activeClassName={styles.active}>
             <a>Posts</a>
-          </Link>
+          </ActiveLink>
         </nav>
         <SignInButton />
       </div>
