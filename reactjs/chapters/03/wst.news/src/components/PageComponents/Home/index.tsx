@@ -1,9 +1,7 @@
-import Head from "next/head";
 import Image from "next/image";
+import { PageComponent } from "..";
 import { Product } from "../../../pages";
-
 import { SubscribeButton } from "../../SubscribeButton";
-
 import styles from "./styles.module.scss";
 
 interface HomePageComponentProps {
@@ -12,12 +10,14 @@ interface HomePageComponentProps {
 
 export function HomePageComponent({ product }: HomePageComponentProps) {
   return (
-    <>
-      <Head>
-        <title>Home | wst.news</title>
-      </Head>
-
-      <main className={styles.contentContainer}>
+    <PageComponent
+      mainClassName={styles.contentContainer}
+      seo={{
+        title: "Home | wst.news",
+        description: "homepage",
+      }}
+    >
+      <>
         <section className={styles.hero}>
           <span>👏 Hey, Welcome</span>
           <h1>
@@ -37,7 +37,7 @@ export function HomePageComponent({ product }: HomePageComponentProps) {
           width={450}
           height={450}
         />
-      </main>
-    </>
+      </>
+    </PageComponent>
   );
 }
