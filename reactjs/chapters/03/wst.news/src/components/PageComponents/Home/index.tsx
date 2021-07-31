@@ -1,14 +1,10 @@
 import Image from "next/image";
 import { PageComponent } from "..";
-import { Product } from "../../../pages";
+import { HomeProps } from "../../../pages";
 import { SubscribeButton } from "../../SubscribeButton";
 import styles from "./styles.module.scss";
 
-interface HomePageComponentProps {
-  product: Product;
-}
-
-export function HomePageComponent({ product }: HomePageComponentProps) {
+export function HomePageComponent({ product }: HomeProps) {
   return (
     <PageComponent
       mainClassName={styles.contentContainer}

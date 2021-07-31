@@ -6,7 +6,7 @@ export declare type Product = {
   priceId: string;
   priceAmount: number;
 };
-interface HomeProps {
+export interface HomeProps {
   product: Product;
 }
 
