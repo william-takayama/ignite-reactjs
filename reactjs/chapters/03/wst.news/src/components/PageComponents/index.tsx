@@ -25,16 +25,13 @@ export function PageComponent({
   const router = useRouter();
 
   const currentURL = router.route;
-  console.log(currentURL);
 
   useEffect(() => {
     function handleStart(url: string) {
-      console.log(`Loading ${url}`);
       setIsLoading(true);
     }
 
     function handleStop(url: string) {
-      console.log(`Stop Loading ${url}`);
       setIsLoading(false);
     }
 
