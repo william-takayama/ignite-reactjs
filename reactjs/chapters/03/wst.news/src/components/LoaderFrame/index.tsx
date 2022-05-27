@@ -1,6 +1,6 @@
-import cn from "clsx";
-import { motion, Transition, Variants } from "framer-motion";
-import styles from "./styles.module.scss";
+import cn from 'clsx'
+import { motion, Transition, Variants } from 'framer-motion'
+import styles from './styles.module.scss'
 
 const pathVariants = {
   hidden: {
@@ -8,28 +8,28 @@ const pathVariants = {
     rotate: -180,
     pathLength: 0,
     strokeWidth: 1,
-    stroke: "white",
+    stroke: 'white',
   },
   spin: {
     opacity: 1,
     rotate: 0,
     pathLength: 1,
     strokeWidth: 2,
-    stroke: "yellow",
+    stroke: 'yellow',
   },
-} as Variants;
+} as Variants
 
 const pathTransition = {
-  ease: "anticipate",
+  ease: 'anticipate',
   damping: 300,
   duration: 3,
   repeat: Infinity,
-  repeatType: "reverse",
-} as Transition;
+  repeatType: 'reverse',
+} as Transition
 
 interface LoaderFrameProps {
-  loading: boolean;
-  className?: string;
+  loading: boolean
+  className?: string
 }
 
 function LoaderFrame({ loading, className, ...props }: LoaderFrameProps) {
@@ -62,7 +62,7 @@ function LoaderFrame({ loading, className, ...props }: LoaderFrameProps) {
         />
       </motion.svg>
     </div>
-  );
+  )
 }
 
-export default LoaderFrame;
+export default LoaderFrame

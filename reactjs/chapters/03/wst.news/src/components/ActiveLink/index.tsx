@@ -1,10 +1,10 @@
-import { useRouter } from "next/dist/client/router";
-import Link, { LinkProps } from "next/link";
-import { ReactElement, cloneElement } from "react";
+import Link, { LinkProps } from 'next/link'
+import { useRouter } from 'next/router'
+import { cloneElement, ReactElement } from 'react'
 
 interface ActiveLinkProps extends LinkProps {
-  children: ReactElement;
-  activeClassName: string;
+  children: ReactElement
+  activeClassName: string
 }
 
 export function ActiveLink({
@@ -12,9 +12,9 @@ export function ActiveLink({
   children,
   ...rest
 }: ActiveLinkProps) {
-  const { asPath } = useRouter();
+  const { asPath } = useRouter()
 
-  const className = asPath === rest.href ? activeClassName : "";
+  const className = asPath === rest.href ? activeClassName : ''
 
-  return <Link {...rest}>{cloneElement(children, { className })}</Link>;
+  return <Link {...rest}>{cloneElement(children, { className })}</Link>
 }

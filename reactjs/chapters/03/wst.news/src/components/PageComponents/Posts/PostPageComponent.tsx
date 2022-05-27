@@ -1,32 +1,31 @@
-import React, { useEffect } from "react";
-import { PageComponent } from "..";
-import { PostPageProps } from "../../../pages/posts/[slug]";
-import cn from "clsx";
-
-import styles from "./PostPageComponent.module.scss";
-import Link from "next/link";
-import { useSession } from "next-auth/client";
-import { useRouter } from "next/dist/client/router";
+import cn from 'clsx'
+import { useSession } from 'next-auth/client'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import React, { useEffect } from 'react'
+import { PageComponent } from '..'
+import { PostPageProps } from '../../../pages/posts/[slug]'
+import styles from './PostPageComponent.module.scss'
 
 interface PostPageComponentProps extends PostPageProps {
-  type: "preview" | "full";
+  type: 'preview' | 'full'
 }
 
 export function PostPageComponent({ type, post }: PostPageComponentProps) {
-  const [session] = useSession();
-  const router = useRouter();
+  const [session] = useSession()
+  const router = useRouter()
 
   useEffect(() => {
     if (session?.activeSubscription) {
-      router.push(`/posts/${post.slug}`);
+      router.push(`/posts/${post.slug}`)
     }
-  }, [post.slug, router, session]);
+  }, [post.slug, router, session])
 
   return (
     <PageComponent
       seo={{
         title: `${post.title} | wst.news`,
-        description: "post page",
+        description: 'post page',
       }}
       mainClassName={styles.container}
     >
@@ -36,12 +35,12 @@ export function PostPageComponent({ type, post }: PostPageComponentProps) {
           <time>{post.updatedAt}</time>
           <div
             className={cn(styles.postContent, {
-              [styles.previewContent]: type === "preview",
+              [styles.previewContent]: type === 'preview',
             })}
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 
-          {type === "preview" ? (
+          {type === 'preview' ? (
             <div className={styles.continueReading}>
               Wanna continue reading?
               <Link href="">
@@ -52,5 +51,5 @@ export function PostPageComponent({ type, post }: PostPageComponentProps) {
         </article>
       </>
     </PageComponent>
-  );
+  )
 }

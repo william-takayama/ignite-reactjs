@@ -1,16 +1,16 @@
-import Link from "next/link";
-import React from "react";
-import { PageComponent } from "..";
-import { PostsPageProps } from "../../../pages/posts";
-import styles from "./styles.module.scss";
+import Link from 'next/link'
+import React from 'react'
+import { PageComponent } from '..'
+import { PostsPageProps } from '../../../pages/posts'
+import styles from './styles.module.scss'
 
 export function PostsPageComponent({ posts }: PostsPageProps) {
   return (
     <PageComponent
       mainClassName={styles.container}
       seo={{
-        title: "Posts | wst.news",
-        description: "posts page",
+        title: 'Posts | wst.news',
+        description: 'posts page',
       }}
     >
       <>
@@ -27,5 +27,5 @@ export function PostsPageComponent({ posts }: PostsPageProps) {
         </div>
       </>
     </PageComponent>
-  );
+  )
 }

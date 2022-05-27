@@ -1,16 +1,16 @@
-import Image from "next/image";
-import { PageComponent } from "..";
-import { HomeProps } from "../../../pages";
-import { SubscribeButton } from "../../SubscribeButton";
-import styles from "./styles.module.scss";
+import Image from 'next/image'
+import { PageComponent } from '..'
+import { HomeProps } from '../../../pages'
+import { SubscribeButton } from '../../SubscribeButton'
+import styles from './styles.module.scss'
 
 export function HomePageComponent({ product }: HomeProps) {
   return (
     <PageComponent
       mainClassName={styles.contentContainer}
       seo={{
-        title: "Home | wst.news",
-        description: "homepage",
+        title: 'Home | wst.news',
+        description: 'homepage',
       }}
     >
       <>
@@ -24,7 +24,7 @@ export function HomePageComponent({ product }: HomeProps) {
             <span>for {product.priceAmount} month</span>
           </p>
 
-          <SubscribeButton priceId={product.priceId} />
+          <SubscribeButton />
         </section>
 
         <Image
@@ -35,5 +35,5 @@ export function HomePageComponent({ product }: HomeProps) {
         />
       </>
     </PageComponent>
-  );
+  )
 }
